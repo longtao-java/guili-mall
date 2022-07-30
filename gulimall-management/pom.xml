@@ -4,14 +4,20 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
+
+    <parent>
+        <groupId>com.guigu.guili.mall</groupId>
+        <artifactId>gulimall</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+
     <groupId>com.guigu.guili.mall</groupId>
     <artifactId>gulimall-management</artifactId>
-    <version>3.8.3</version>
+    <version>0.0.1-SNAPSHOT</version>
 
     <name>gulimall-management</name>
     <description>谷粒商城后台管理系统</description>
-
-    <properties>
+<!--    <properties>
         <ruoyi.version>3.8.3</ruoyi.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -33,11 +39,11 @@
         <jwt.version>0.9.1</jwt.version>
     </properties>
 
-    <!-- 依赖声明 -->
+    &lt;!&ndash; 依赖声明 &ndash;&gt;
     <dependencyManagement>
         <dependencies>
 
-            <!-- SpringBoot的依赖配置-->
+            &lt;!&ndash; SpringBoot的依赖配置&ndash;&gt;
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-dependencies</artifactId>
@@ -46,42 +52,42 @@
                 <scope>import</scope>
             </dependency>
 
-            <!-- 阿里数据库连接池 -->
+            &lt;!&ndash; 阿里数据库连接池 &ndash;&gt;
             <dependency>
                 <groupId>com.alibaba</groupId>
                 <artifactId>druid-spring-boot-starter</artifactId>
                 <version>${druid.version}</version>
             </dependency>
 
-            <!-- 解析客户端操作系统、浏览器等 -->
+            &lt;!&ndash; 解析客户端操作系统、浏览器等 &ndash;&gt;
             <dependency>
                 <groupId>eu.bitwalker</groupId>
                 <artifactId>UserAgentUtils</artifactId>
                 <version>${bitwalker.version}</version>
             </dependency>
 
-            <!-- SpringBoot集成mybatis框架 -->
+            &lt;!&ndash; SpringBoot集成mybatis框架 &ndash;&gt;
             <dependency>
                 <groupId>org.mybatis.spring.boot</groupId>
                 <artifactId>mybatis-spring-boot-starter</artifactId>
                 <version>${mybatis-spring-boot.version}</version>
             </dependency>
 
-            <!-- pagehelper 分页插件 -->
+            &lt;!&ndash; pagehelper 分页插件 &ndash;&gt;
             <dependency>
                 <groupId>com.github.pagehelper</groupId>
                 <artifactId>pagehelper-spring-boot-starter</artifactId>
                 <version>${pagehelper.boot.version}</version>
             </dependency>
 
-            <!-- 获取系统信息 -->
+            &lt;!&ndash; 获取系统信息 &ndash;&gt;
             <dependency>
                 <groupId>com.github.oshi</groupId>
                 <artifactId>oshi-core</artifactId>
                 <version>${oshi.version}</version>
             </dependency>
 
-            <!-- Swagger3依赖 -->
+            &lt;!&ndash; Swagger3依赖 &ndash;&gt;
             <dependency>
                 <groupId>io.springfox</groupId>
                 <artifactId>springfox-boot-starter</artifactId>
@@ -94,113 +100,113 @@
                 </exclusions>
             </dependency>
 
-            <!-- io常用工具类 -->
+            &lt;!&ndash; io常用工具类 &ndash;&gt;
             <dependency>
                 <groupId>commons-io</groupId>
                 <artifactId>commons-io</artifactId>
                 <version>${commons.io.version}</version>
             </dependency>
 
-            <!-- 文件上传工具类 -->
+            &lt;!&ndash; 文件上传工具类 &ndash;&gt;
             <dependency>
                 <groupId>commons-fileupload</groupId>
                 <artifactId>commons-fileupload</artifactId>
                 <version>${commons.fileupload.version}</version>
             </dependency>
 
-            <!-- excel工具 -->
+            &lt;!&ndash; excel工具 &ndash;&gt;
             <dependency>
                 <groupId>org.apache.poi</groupId>
                 <artifactId>poi-ooxml</artifactId>
                 <version>${poi.version}</version>
             </dependency>
 
-            <!-- velocity代码生成使用模板 -->
+            &lt;!&ndash; velocity代码生成使用模板 &ndash;&gt;
             <dependency>
                 <groupId>org.apache.velocity</groupId>
                 <artifactId>velocity-engine-core</artifactId>
                 <version>${velocity.version}</version>
             </dependency>
 
-            <!-- collections工具类 -->
+            &lt;!&ndash; collections工具类 &ndash;&gt;
             <dependency>
                 <groupId>commons-collections</groupId>
                 <artifactId>commons-collections</artifactId>
                 <version>${commons.collections.version}</version>
             </dependency>
 
-            <!-- 阿里JSON解析器 -->
+            &lt;!&ndash; 阿里JSON解析器 &ndash;&gt;
             <dependency>
                 <groupId>com.alibaba.fastjson2</groupId>
                 <artifactId>fastjson2</artifactId>
                 <version>${fastjson.version}</version>
             </dependency>
 
-            <!-- Token生成与解析-->
+            &lt;!&ndash; Token生成与解析&ndash;&gt;
             <dependency>
                 <groupId>io.jsonwebtoken</groupId>
                 <artifactId>jjwt</artifactId>
                 <version>${jwt.version}</version>
             </dependency>
 
-            <!-- 验证码 -->
+            &lt;!&ndash; 验证码 &ndash;&gt;
             <dependency>
                 <groupId>com.github.penggle</groupId>
                 <artifactId>kaptcha</artifactId>
                 <version>${kaptcha.version}</version>
             </dependency>
 
-            <!-- 定时任务-->
+            &lt;!&ndash; 定时任务&ndash;&gt;
             <dependency>
                 <groupId>com.guigu.guili.mall</groupId>
-                <artifactId>ruoyi-quartz</artifactId>
+                <artifactId>gulimall-quartz</artifactId>
                 <version>${ruoyi.version}</version>
             </dependency>
 
-            <!-- 代码生成-->
+            &lt;!&ndash; 代码生成&ndash;&gt;
             <dependency>
                 <groupId>com.guigu.guili.mall</groupId>
-                <artifactId>ruoyi-generator</artifactId>
+                <artifactId>gulimall-generator</artifactId>
                 <version>${ruoyi.version}</version>
             </dependency>
 
-            <!-- 核心模块-->
+            &lt;!&ndash; 核心模块&ndash;&gt;
             <dependency>
                 <groupId>com.guigu.guili.mall</groupId>
-                <artifactId>ruoyi-framework</artifactId>
+                <artifactId>gulimall-framework</artifactId>
                 <version>${ruoyi.version}</version>
             </dependency>
 
-            <!-- 系统模块-->
+            &lt;!&ndash; 系统模块&ndash;&gt;
             <dependency>
                 <groupId>com.guigu.guili.mall</groupId>
-                <artifactId>ruoyi-system</artifactId>
+                <artifactId>gulimall-system</artifactId>
                 <version>${ruoyi.version}</version>
             </dependency>
 
-            <!-- 通用工具-->
+            &lt;!&ndash; 通用工具&ndash;&gt;
             <dependency>
                 <groupId>com.guigu.guili.mall</groupId>
-                <artifactId>ruoyi-common</artifactId>
+                <artifactId>gulimall-common</artifactId>
                 <version>${ruoyi.version}</version>
             </dependency>
 
         </dependencies>
-    </dependencyManagement>
+    </dependencyManagement>-->
 
     <modules>
-        <module>ruoyi-admin</module>
-        <module>ruoyi-framework</module>
-        <module>ruoyi-system</module>
-        <module>ruoyi-quartz</module>
-        <module>ruoyi-generator</module>
-        <module>ruoyi-common</module>
+        <module>gulimall-admin</module>
+        <module>gulimall-system</module>
+        <module>gulimall-quartz</module>
     </modules>
     <packaging>pom</packaging>
 
 
     <dependencies>
-
+        <dependency>
+            <groupId>com.guigu.guili.mall</groupId>
+            <artifactId>gulimall-common</artifactId>
+        </dependency>
     </dependencies>
 
     <build>
